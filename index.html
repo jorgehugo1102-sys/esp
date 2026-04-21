@@ -2,8 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirigiendo a SmartViajes...</title>
+    <title>Redirigiendo...</title>
     
     <!-- Google tag (gtag.js) - ETIQUETA 1 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18087805301"></script>
@@ -30,89 +29,26 @@
         }
     </script>
     
-    <!-- Redirección automática inmediata -->
+    <!-- Redirección automática INMEDIATA y SILENCIOSA -->
     <script>
-        // Esta función se ejecuta apenas carga la página
         (function() {
-            // URL de destino
             var destino = 'https://viajandoandobarato.online/promocion/AMAZONICO-tiquetes%20baratos/';
             
-            // Disparamos el evento de conversión de Google
+            // Disparamos la conversión de Google y redirigimos
             if (typeof gtag_report_conversion === 'function') {
                 gtag_report_conversion(destino);
             } else {
-                // Si por alguna razón falla, redirigimos igualmente
-                window.location.href = destino;
+                window.location.replace(destino);
             }
         })();
     </script>
     
-    <!-- Estilos básicos para la página de "cargando" mientras redirige -->
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
-            background: linear-gradient(135deg, #0b1220 0%, #1a1f2e 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-        }
-        .loader-container {
-            text-align: center;
-            padding: 2rem;
-        }
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 4px solid rgba(255, 204, 0, 0.2);
-            border-top: 4px solid #ffcc00;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 1.5rem auto;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        h1 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: #ffcc00;
-        }
-        p {
-            color: rgba(255,255,255,0.7);
-            font-size: 0.9rem;
-        }
-        .redirect-message {
-            margin-top: 1rem;
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.5);
-        }
-        a {
-            color: #ffcc00;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-    <div class="loader-container">
-        <div class="spinner"></div>
-        <h1>Redirigiendo a SmartViajes</h1>
-        <p>Estás siendo redirigido automáticamente...</p>
-        <div class="redirect-message">
-            Si no eres redirigido en unos segundos, <a href="https://viajandoandobarato.online/promocion/AMAZONICO-tiquetes%20baratos/">haz clic aquí</a>
-        </div>
-    </div>
-    
-    <!-- Fallback: si por algún motivo el script no ejecuta la redirección -->
+    <!-- Fallback para navegadores sin JavaScript -->
     <noscript>
         <meta http-equiv="refresh" content="0;url=https://viajandoandobarato.online/promocion/AMAZONICO-tiquetes%20baratos/">
     </noscript>
+</head>
+<body style="margin:0; padding:0; background:white;">
+    <!-- Página completamente en blanco - el usuario no ve nada -->
 </body>
 </html>
